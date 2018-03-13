@@ -1,0 +1,40 @@
+<div id="newPost" class="modal fade" role="dialog">
+<form id="newPostForm" action="${pageContext.request.contextPath}/post" method="POST">
+	<div class="modal-content entityform-dialog">
+		<div class="modal-header"><span class="modal-title">Create New Post</span></div>
+		<div class="modal-body">
+			<span>
+				<div class="form-group">
+					<label for="postTitle">Title</label>
+					<input type="text" name="newPostTitle" id="newPostTitle" class="form-control"/>
+				</div>
+			</span>
+			<span>
+				<div class="form-group">
+					<label for="postText">Content</label>
+					<textarea name="newPostText" rows="10" id="newPostText" class="form-control"></textarea>
+				</div>
+			</span>
+			<span>
+				<div class="form-group">
+					<label for="postText">Post To</label></br>
+					<input name="scope" type="radio" checked value="1">My Blog</>
+					<input name="scope" type="radio" value="3">All Users</>
+					<input name="scope" type="radio" value="2">Group</>
+				</div>
+			</span>
+			<span id="groupSelectDiv"  style="display:none">
+				<label for="groupSelect">Select Group</label></br>
+				<div class="form-group">
+					<select name="groupID" id="groupSelect"></select>
+				</div>
+			</span>
+		</div>
+		<div class="modal-footer">
+			<a data-dismiss="modal" href="">Cancel </a><div id="newPostSubmit" onclick="saveNewPost();" class="btn btn-small btn-primary">Save</div>
+		</div>
+		<input type="hidden" name="param" value="post"/>
+	</div>
+</form>
+
+</div>

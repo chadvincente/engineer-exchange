@@ -1,0 +1,20 @@
+<div id="newGroup" class="modal fade" role="dialog">
+<form id="newGroupForm" action="${pageContext.request.contextPath}/groups" method="POST">
+	<div class="modal-content entityform-dialog">
+		<div class="modal-header"><span class="modal-title">Create New Group</span></div>
+		<div class="modal-body">
+			<span>
+				<div class="form-group">
+					<label for="postTitle">Name</label>
+					<input type="text" name="newGroupName" id="newGroupName" class="form-control"/>
+				</div>
+			</span>
+			
+		</div>
+		<div class="modal-footer">
+			<a data-dismiss="modal" href="">Cancel </a><div id="newGroupSubmit" onclick="saveNewGroup();" class="btn btn-small btn-primary">Save</div>
+		</div>
+	</div>
+</form>
+
+</div>
