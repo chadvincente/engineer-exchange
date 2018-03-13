@@ -38,11 +38,11 @@ public class HomeServlet extends HttpServlet {
 		
 		if (u == null)
 		{
-			//String code = request.getParameter("code");
-			//OAuth auth = new OAuth();
-			//User s = auth.getUser(code);
-			//u = userDAO.loadAuthUser(s.getName(), s.getLogin());
-			u = userDAO.loadAuthUser("Test User", "testlogin");
+			String code = request.getParameter("code");
+			OAuth auth = new OAuth();
+			User s = auth.getUser(code);
+			u = userDAO.loadAuthUser(s.getName(), s.getLogin());
+			//u = userDAO.loadAuthUser("Test User", "testlogin");
 		}
 		u.setGroups(userDAO.loadGroups(u.getId()));
 		u.setNumGroups(u.getGroups().size());
