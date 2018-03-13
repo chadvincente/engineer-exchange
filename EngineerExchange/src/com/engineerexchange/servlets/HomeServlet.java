@@ -39,6 +39,11 @@ public class HomeServlet extends HttpServlet {
 		if (u == null)
 		{
 			String code = request.getParameter("code");
+			if (code == null || "".equalsIgnoreCase(code))
+			{
+				RequestDispatcher dispatcher = request.getRequestDispatcher("/index");
+				dispatcher.forward(request, response);
+			}
 			OAuth auth = new OAuth();
 			User s = auth.getUser(code);
 			u = userDAO.loadAuthUser(s.getName(), s.getLogin());

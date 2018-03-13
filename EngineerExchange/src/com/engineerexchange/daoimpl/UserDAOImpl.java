@@ -260,6 +260,7 @@ public class UserDAOImpl implements UserDAO {
 				p.setPostedBy(new User(rs.getString("USR_NM"),rs.getInt("ROW_CRT_USR_ID"),rs.getString("USR_LOGIN")));
 				p.setPostScope(rs.getInt("POST_SCOPE_CD"));
 				p.setGroupName(rs.getString("GRP_NM"));
+				p.setGroupID(rs.getInt("TO_GRP_ID"));
 				CallableStatement cs2 = c.prepareCall("{call SP_GET_POST_READS(?)}");
 				cs2.setInt("postID", p.getId());
 				ResultSet rs2 = cs2.executeQuery();
