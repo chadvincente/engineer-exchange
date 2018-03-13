@@ -2,16 +2,26 @@ $(document).ready(function() {
     $('input[type=radio][name=scope]').change(function() {
         if (this.value == 2) {
         	$.get(myContextPath + '/users?param=myGroups', function(json){
+        		
         		for (var i = 0; i < json.length; i++) {
         			$('#groupSelect').append("<option value=" + json[i].id +">"+json[i].name+"</option>");
         		}
-        		$('#groupSelectDiv').modal('show');
+        		if(json.length > 0)
+        		{
+        			$('#groupSelectDiv').show();
+        		}
+        		else
+        		{
+        			$('#groupMessageDiv').show();
+        		}
+        		
         	}).fail(function(){
         		alert('An error occured.');
         	});
         }
         else {
-        	$('#groupSelectDiv').modal('hide');
+        	$('#groupMessageDiv').hide();
+        	$('#groupSelectDiv').hide();
         }
     });
     

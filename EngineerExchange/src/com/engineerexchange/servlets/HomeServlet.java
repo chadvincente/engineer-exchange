@@ -43,7 +43,7 @@ public class HomeServlet extends HttpServlet {
 			User s = auth.getUser(code);
 			u = userDAO.loadAuthUser(s.getName(), s.getLogin());
 			//used for local testing
-			//u = userDAO.loadAuthUser("Test User", "testlogin");
+			//u = userDAO.loadAuthUser("John Doe", "testlogin");
 		}
 		u.setGroups(userDAO.loadGroups(u.getId()));
 		u.setNumGroups(u.getGroups().size());

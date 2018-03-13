@@ -23,12 +23,15 @@
 					<input name="scope" type="radio" value="2">Group</>
 				</div>
 			</span>
-			<span id="groupSelectDiv"  style="display:none">
+			<div id="groupSelectDiv"  style="display:none">
 				<label for="groupSelect">Select Group</label></br>
 				<div class="form-group">
 					<select name="groupID" id="groupSelect"></select>
 				</div>
-			</span>
+			</div>
+			<div id="groupMessageDiv"  style="display:none">
+			<p>You must first join a group to post to it!</p>
+			</div>
 		</div>
 		<div class="modal-footer">
 			<a data-dismiss="modal" href="">Cancel </a><div id="newPostSubmit" onclick="saveNewPost();" class="btn btn-small btn-primary">Save</div>

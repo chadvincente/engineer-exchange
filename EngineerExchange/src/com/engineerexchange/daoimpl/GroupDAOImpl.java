@@ -99,8 +99,8 @@ public class GroupDAOImpl implements GroupDAO {
 				ArrayList<User> u = new ArrayList<User>();
 				boolean read = false;
 				p.setId(rs.getInt("POST_ID"));
-				p.setPostTitle("POST_TITLE");
-				p.setPostText("POST_TXT");
+				p.setPostTitle(rs.getString("POST_TITLE"));
+				p.setPostText(rs.getString("POST_TXT"));
 				p.setTimestamp(Constants.sdf.format(rs.getTimestamp("ROW_CRT_TS")) + " UTC");
 				p.setPostedBy(new User(rs.getString("USR_NM"),rs.getInt("ROW_CRT_USR_ID"),rs.getString("USR_LOGIN")));
 				
