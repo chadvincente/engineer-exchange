@@ -15,7 +15,17 @@ import com.engineerexchange.utils.DatabaseConnection;
 import com.engineerexchange.utils.Utils;
 
 public class PostDAOImpl implements PostDAO {
-
+	
+	/**
+	   * To save a post.
+	   * @param text Post content
+	   * @param title Post title
+	   * @param postedBy User ID of poster
+	   * @param postScope 1=OwnBlog,2=GroupBlog,3=AllUsers
+	   * @param groupID If scope=2, the group ID. Can be null.
+	   * @param toUsrID Future use. Leave null or 0 for now.
+	   * @return Auto-generated post ID
+	   */
 	@Override
 	public int savePost(String text, String title, int postedBy, int postScope, int groupID, int toUsrID){
 		Connection c = DatabaseConnection.openDBConnection();
