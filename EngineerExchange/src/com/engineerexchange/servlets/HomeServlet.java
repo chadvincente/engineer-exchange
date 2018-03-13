@@ -43,6 +43,7 @@ public class HomeServlet extends HttpServlet {
 			{
 				RequestDispatcher dispatcher = request.getRequestDispatcher("/index");
 				dispatcher.forward(request, response);
+				return;
 			}
 			OAuth auth = new OAuth();
 			User s = auth.getUser(code);
