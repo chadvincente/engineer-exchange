@@ -15,6 +15,7 @@ public class Post {
 	private boolean ownPost;
 	private boolean read;
 	private String groupName;
+
 	
 	
 	public Post() {

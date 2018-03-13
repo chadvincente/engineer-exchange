@@ -33,9 +33,9 @@
 									<c:choose>
 										<c:when test="${item.ownPost}">
 											<h5>Posted by <a href="${pageContext.request.contextPath}/home">Me</a> - 
-											<a href="javascript:;" onclick="viewReads('${post.id}')">Read by ${item.numReads}
+											<a href="javascript:;" onclick="viewReads('${item.id}')">Read by ${item.numReads}
 											<c:choose>
-												<c:when test="${post.numReads == 1}">
+												<c:when test="${item.numReads == 1}">
 								       			person
 								    			</c:when>
 												<c:otherwise>

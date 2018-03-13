@@ -66,7 +66,7 @@
 													All Users
 												</c:when>
 												<c:when test="${item.postScope == 2}">
-													${item.groupName}
+													<a href="${pageContext.request.contextPath}/groups?id=${item.groupID}">${item.groupName}</a>
 												</c:when>
 											</c:choose> - 
 											<a href="javascript:;" onclick="viewReads('${item.id}')">Read by ${item.numReads} 
@@ -90,7 +90,7 @@
 													All Users
 												</c:when>
 												<c:when test="${item.postScope == 2}">
-													${item.groupName}
+													<a href="${pageContext.request.contextPath}/groups?id=${item.groupID}">${item.groupName}</a>
 												</c:when>
 											</c:choose>
 											</h5>
